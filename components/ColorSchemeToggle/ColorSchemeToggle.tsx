@@ -1,8 +1,8 @@
 'use client';
 
-import { Button, Group, useMantineColorScheme } from '@mantine/core';
+import { Button, Group, GroupProps, useMantineColorScheme } from '@mantine/core';
 
-export function ColorSchemeToggle() {
+export const ColorSchemeToggle: React.FC<GroupProps> = () => {
   const { setColorScheme } = useMantineColorScheme();
 
   return (

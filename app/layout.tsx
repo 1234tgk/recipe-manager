@@ -1,11 +1,12 @@
 import '@mantine/core/styles.css';
 import React from 'react';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
-import { theme } from '../theme';
+import { theme } from "@/theme";
+import { Layout } from "@/components/Layout/Layout";
 
 export const metadata = {
-  title: 'Mantine Next.js template',
-  description: 'I am using Mantine with Next.js!',
+  title: 'Recipe Manager',
+  description: 'Recipe Manager for Celine',
 };
 
 export default function RootLayout({ children }: { children: any }) {
@@ -20,7 +21,11 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider theme={theme}>
+          <Layout>
+            {children}
+          </Layout>
+        </MantineProvider>
       </body>
     </html>
   );
