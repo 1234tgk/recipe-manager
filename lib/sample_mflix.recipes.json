@@ -1,0 +1,116 @@
+[{
+  "_id": {
+    "$oid": "668def6cbcdda9378aa57678"
+  },
+  "title": "Spaghetti Bolognese",
+  "type": 1,
+  "description": "A classic Italian pasta dish with rich, meaty sauce.",
+  "ingredients": [
+    "200g spaghetti",
+    "100g ground beef",
+    "1 onion",
+    "2 cloves garlic",
+    "400g canned tomatoes",
+    "2 tbsp tomato paste",
+    "1 carrot",
+    "1 celery stalk",
+    "Salt",
+    "Pepper",
+    "Olive oil",
+    "Parmesan cheese"
+  ],
+  "steps": [
+    "Cook spaghetti according to package instructions.",
+    "Heat olive oil in a pan and sauté chopped onions and garlic until translucent.",
+    "Add ground beef and cook until browned.",
+    "Add grated carrot and chopped celery, cook for another 5 minutes.",
+    "Stir in canned tomatoes and tomato paste. Simmer for 20 minutes.",
+    "Season with salt and pepper.",
+    "Serve sauce over spaghetti and sprinkle with Parmesan cheese."
+  ],
+  "createdAt": "2024-07-06T00:00:00Z",
+  "updatedAt": "2024-07-06T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "668def6cbcdda9378aa57679"
+  },
+  "title": "Spaghetti Carbonara",
+  "type": 1,
+  "description": "Classic Italian pasta dish",
+  "ingredients": [
+    "spaghetti",
+    "eggs",
+    "bacon",
+    "parmesan cheese"
+  ],
+  "steps": [
+    "Cook spaghetti",
+    "Fry bacon",
+    "Mix eggs and cheese",
+    "Combine all ingredients"
+  ]
+},
+{
+  "_id": {
+    "$oid": "668def6cbcdda9378aa5767a"
+  },
+  "title": "Chicken Curry",
+  "type": 2,
+  "description": "A spicy and flavorful curry with tender pieces of chicken.",
+  "ingredients": [
+    "500g chicken breast",
+    "1 onion",
+    "3 cloves garlic",
+    "1 tbsp ginger paste",
+    "2 tbsp curry powder",
+    "400ml coconut milk",
+    "2 tomatoes",
+    "Salt",
+    "Pepper",
+    "2 tbsp vegetable oil",
+    "Coriander leaves"
+  ],
+  "steps": [
+    "Heat oil in a pan and sauté chopped onions, garlic, and ginger until fragrant.",
+    "Add curry powder and cook for another 2 minutes.",
+    "Add diced chicken and cook until no longer pink.",
+    "Add chopped tomatoes and coconut milk. Simmer for 20 minutes.",
+    "Season with salt and pepper.",
+    "Garnish with coriander leaves before serving."
+  ],
+  "createdAt": "2024-07-06T00:00:00Z",
+  "updatedAt": "2024-07-06T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "668def6cbcdda9378aa5767b"
+  },
+  "title": "Chocolate Cake",
+  "type": 3,
+  "description": "A rich and moist chocolate cake perfect for any occasion.",
+  "ingredients": [
+    "200g all-purpose flour",
+    "200g sugar",
+    "100g cocoa powder",
+    "1 tsp baking powder",
+    "1 tsp baking soda",
+    "1/2 tsp salt",
+    "2 eggs",
+    "240ml milk",
+    "120ml vegetable oil",
+    "2 tsp vanilla extract",
+    "240ml boiling water"
+  ],
+  "steps": [
+    "Preheat oven to 175°C (350°F). Grease and flour two 9-inch round baking pans.",
+    "In a large bowl, combine flour, sugar, cocoa powder, baking powder, baking soda, and salt.",
+    "Add eggs, milk, oil, and vanilla extract. Beat on medium speed for 2 minutes.",
+    "Stir in boiling water (batter will be thin).",
+    "Pour batter into prepared pans.",
+    "Bake for 30-35 minutes or until a toothpick inserted into the center comes out clean.",
+    "Cool in pans for 10 minutes, then remove to wire racks to cool completely."
+  ],
+  "createdAt": "2024-07-06T00:00:00Z",
+  "updatedAt": "2024-07-06T00:00:00Z"
+}]
