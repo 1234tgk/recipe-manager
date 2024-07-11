@@ -2,10 +2,11 @@
 
 import React from 'react';
 import { IRecipe } from '@/models/Recipe';
-import { Title, Text, List, Paper, Divider, Button } from '@mantine/core';
+import { Title, Text, List, Paper, Divider, Button, Card, Group } from '@mantine/core';
 import { FOOD_TYPES_ENUM } from '@/lib/types';
 import { useRouter } from 'next/navigation';
 import { ChevronLeft } from 'lucide-react';
+import { FoodIcon } from '../FoodIcon/FoodIcon';
 
 type Props = {
   element: IRecipe;
@@ -19,18 +20,28 @@ export const RecipeDetails: React.FC<Props> = ({ element }) => {
       <Button mb="md" variant="outline" onClick={() => router.back()}>
         <ChevronLeft />
       </Button>
-      <Title order={1}>{element.title}</Title>
+      <Title order={1} mb="md">
+        {element.title}
+      </Title>
 
-      <Text c="dimmed" size="sm">
-        {Object.keys(FOOD_TYPES_ENUM)[element.type - 1]}
-      </Text>
+      <Group>
+        <FoodIcon type={element.type} />
+        <Text c="dimmed" size="sm">
+          {Object.keys(FOOD_TYPES_ENUM)[element.type - 1]}
+        </Text>
+      </Group>
+
       <Divider my="md" />
       <Paper withBorder shadow="md" p="md">
-        <Title order={2}>Description</Title>
+        <Title order={2} mb="md">
+          Description
+        </Title>
         <Text>{element.description}</Text>
       </Paper>
       <Paper withBorder shadow="md" p="md" mt="md">
-        <Title order={2}>Ingredients</Title>
+        <Title order={2} mb="md">
+          Ingredients
+        </Title>
         <List spacing="xs" size="sm" center>
           {element.ingredients.map((ingredient, index) => (
             <List.Item key={index}>{ingredient}</List.Item>
@@ -39,11 +50,11 @@ export const RecipeDetails: React.FC<Props> = ({ element }) => {
       </Paper>
       <Paper withBorder shadow="md" p="md" mt="md">
         <Title order={2}>Steps</Title>
-        <List spacing="xs" size="sm" center>
-          {element.steps.map((step, index) => (
-            <List.Item key={index}>{step}</List.Item>
-          ))}
-        </List>
+        {element.steps.map((step, index) => (
+          <Card key={index} shadow="sm" p="sm" mt="sm" withBorder>
+            <Text>{`${index + 1}. ${step}`}</Text>
+          </Card>
+        ))}
       </Paper>
     </>
   );

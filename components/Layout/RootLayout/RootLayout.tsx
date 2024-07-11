@@ -3,6 +3,7 @@
 import { AppShell, Burger, Flex, Group, ScrollArea, Skeleton, Text, Title } from '@mantine/core';
 import { useDisclosure, useViewportSize } from '@mantine/hooks';
 import { Header } from '../Header/Header';
+import { Navbar } from '../Navbar/Navbar';
 
 export const RootLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [opened, { toggle }] = useDisclosure();
@@ -28,11 +29,7 @@ export const RootLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
       </AppShell.Header>
       <AppShell.Navbar p="md">
         Recipe Types
-        {Array(15)
-          .fill(0)
-          .map((_, index) => (
-            <Skeleton key={index} h={28} mt="sm" animate={false} />
-          ))}
+        <Navbar />
       </AppShell.Navbar>
       <AppShell.Main>
         <ScrollArea h={{ base: height - 100, md: height - 110, lg: height - 120 }}>

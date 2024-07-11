@@ -2,6 +2,7 @@
 
 import { IRecipe } from '@/models/Recipe';
 import { Anchor, Table } from '@mantine/core';
+import { FoodIcon } from '../FoodIcon/FoodIcon';
 
 type Props = {
   elements: IRecipe[];
@@ -17,7 +18,9 @@ export const RecipeTable: React.FC<Props> = ({ elements }) => {
           {element.title}
         </Anchor>
       </Table.Td>
-      <Table.Td>{element.type}</Table.Td>
+      <Table.Td>
+        <FoodIcon type={element.type} />
+      </Table.Td>
     </Table.Tr>
   ));
 
