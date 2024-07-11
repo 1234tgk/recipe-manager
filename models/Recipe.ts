@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document, Model } from 'mongoose';
 
-interface IRecipe extends Document {
+export interface IRecipe extends Document {
   title: string;
   type: number;
   description: string;

@@ -1,8 +1,8 @@
 import '@mantine/core/styles.css';
 import React from 'react';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
-import { theme } from "@/theme";
-import { Layout } from "@/components/Layout/Layout";
+import { theme } from '@/theme';
+import { RootLayout as Layout } from '@/components/Layout/RootLayout/RootLayout';
 
 export const metadata = {
   title: 'Recipe Manager',
@@ -22,9 +22,7 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <MantineProvider theme={theme}>
-          <Layout>
-            {children}
-          </Layout>
+          <Layout>{children}</Layout>
         </MantineProvider>
       </body>
     </html>

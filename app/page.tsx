@@ -1,26 +1,15 @@
-'use client'
+import { RecipeTable } from '@/components/RecipeTable/RecipeTable';
+import axios from 'axios';
 
-import { Welcome } from '../components/Welcome/Welcome';
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
-import { ScrollArea } from "@mantine/core";
-import { useViewportSize } from '@mantine/hooks';
-
-export default function HomePage() {
-  const { height } = useViewportSize();
+const HomePage = async () => {
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/recipes/fake`);
+  const { data: recipes, success } = res.data;
 
   return (
-    <ScrollArea
-      h={{ base: height - 100, md: height - 110, lg: height - 120 }}
-    >
-      <Welcome />
-      <Welcome />
-      <Welcome />
-      <Welcome />
-      <Welcome />
-      <Welcome />
-      <Welcome />
-      <Welcome />
-      <ColorSchemeToggle />
-    </ScrollArea>
+    <>
+      <RecipeTable elements={recipes} />
+    </>
   );
-}
+};
+
+export default HomePage;

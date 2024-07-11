@@ -1,16 +1,17 @@
-'use client'
+'use client';
 
-import { Table } from "@mantine/core";
+import { Table } from '@mantine/core';
 import { IUser } from '@/models/User';
 
 type Props = {
-  elements: IUser[]
-}
+  elements: IUser[];
+};
 
 export const SampleTable: React.FC<Props> = ({ elements }) => {
   const rows = elements.map((element) => (
     <Table.Tr key={element.email}>
-      <Table.Td>{JSON.stringify(element._id)}</Table.Td>
+      {/* @ts-expect-error */}
+      <Table.Td>{element._id.$oid}</Table.Td>
       <Table.Td>{element.name}</Table.Td>
       <Table.Td>{element.email}</Table.Td>
     </Table.Tr>
@@ -28,4 +29,4 @@ export const SampleTable: React.FC<Props> = ({ elements }) => {
       <Table.Tbody>{rows}</Table.Tbody>
     </Table>
   );
-}
+};

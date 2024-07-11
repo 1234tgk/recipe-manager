@@ -1,10 +1,12 @@
-"use client"
+'use client';
 
-import { AppShell, Burger, Group, Skeleton, Text, Title } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import { AppShell, Burger, Flex, Group, ScrollArea, Skeleton, Text, Title } from '@mantine/core';
+import { useDisclosure, useViewportSize } from '@mantine/hooks';
+import { Header } from '../Header/Header';
 
-export const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
+export const RootLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [opened, { toggle }] = useDisclosure();
+  const { height } = useViewportSize();
 
   return (
     <AppShell
@@ -18,12 +20,10 @@ export const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
     >
       <AppShell.Header>
         <Group h="100%" px="md">
-          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <Title>
-            <Text inherit variant="gradient" component="span" gradient={{ from: 'hotpink', to: 'fuchsia' }}>
-              Recipe Manager
-            </Text>
-          </Title>
+          <Flex w="100%">
+            <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+            <Header />
+          </Flex>
         </Group>
       </AppShell.Header>
       <AppShell.Navbar p="md">
@@ -35,8 +35,10 @@ export const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
           ))}
       </AppShell.Navbar>
       <AppShell.Main>
-        {children}
+        <ScrollArea h={{ base: height - 100, md: height - 110, lg: height - 120 }}>
+          {children}
+        </ScrollArea>
       </AppShell.Main>
     </AppShell>
   );
-}
+};

@@ -1,0 +1,8 @@
+export const FOOD_TYPES_ENUM = {
+  APPETIZER: 1,
+  SOUP: 2,
+  SALAD: 3,
+  MAIN: 4,
+  PALETE_CLEANSER: 5,
+  DESERT: 6,
+};
